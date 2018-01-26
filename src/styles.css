@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+	color: black;
+	font-family: 'Audiowide';
+	background: linear-gradient(white,gray);
+	width: 100%;
+	margin-top:0;
+	margin-bottom:0;
+	padding: 10px;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-size: 40px;
+}
+
+body {
+	background: lightgray;
+	margin:0 !important;
+	padding:0 !important;
+	height: 100%;
+	min-height: 100%;
+}

@@ -1,0 +1,58 @@
+<nav class="navbar">
+	<div class="container-fluid">
+		<div class="navbar-header">Register Panel</div>
+		<ul class="nav navbar-nav navbar-right bag">
+			<li>
+				<button routerLink="/Bag">Bag</button>
+			</li>
+			<li>
+				<button routerLink="/UserPanel">User Panel</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="RegisterData">
+	<div class="form-group text-center ">
+		<label for="usr">Enter Login:</label> <input type="text"
+			class="form-control font-edit1" [(ngModel)]="UserData.login">
+		<div *ngIf='warningLogin'>
+			<br />{{warningLogin}}
+		</div>
+	</div>
+
+	<div class="form-group text-center">
+		<label for="pass">Enter Password:</label> <input type="text"
+			class="form-control" id="pass" [(ngModel)]="UserData.password">
+		<div *ngIf='warningPass'>
+			<br />{{warningPass}}
+		</div>
+	</div>
+
+	<div class="form-group text-center ">
+		<label for="name">Enter Name:</label> <input type="text"
+			class="form-control" [(ngModel)]="UserData.name">
+		<div *ngIf='warningName'>
+			<br />{{warningName}}
+		</div>
+	</div>
+
+	<div class="form-group text-center ">
+		<label for="SurName">Enter SurName:</label> <input type="text"
+			class="form-control" [(ngModel)]="UserData.surname">
+		<div *ngIf='warningSurname'>
+			<br />{{warningSurname}}
+		</div>
+	</div>
+
+	<div class="form-group text-center ">
+		<label for="Address">Enter address:</label> <input type="text"
+			class="form-control" [(ngModel)]="UserData.address">
+		<div *ngIf='warningAddress'>
+			<br />{{warningAddress}}
+		</div>
+	</div>
+
+	<button class="btn" (click)="validate()">Register Account</button>
+	<button class="btn" routerLink="/Products">Go back to products</button>
+</div>

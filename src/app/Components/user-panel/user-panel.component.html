@@ -1,0 +1,33 @@
+<nav class="navbar">
+	<div class="container-fluid">
+		<div class="navbar-header">User Panel</div>
+		<ul class="nav navbar-nav navbar-right bag">
+			<li>
+				<button routerLink="/Bag">Bag</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="LoginData">
+	<div class="form-group text-center ">
+		<label for="usr">Login:</label> <input type="text"
+			class="form-control" [(ngModel)]="userData.login">
+	</div>
+
+	<div class="form-group text-center">
+		<label for="usr">Password:</label> <input type="password"
+			class="form-control" id="usr" [(ngModel)]="userData.password">
+	</div>
+
+	<button class="btn" (click)="authenticate()">Log in</button>
+	<button class="btn" routerLink="/RegisterPanel">Register
+		Account</button>
+	<button class="btn" routerLink="/Products">Go back to products</button>
+</div>
+
+<div class="footer">
+	<button class="btn" routerLink="/AdminPanelAuthenticate">Admin
+		Panel</button>
+
+</div>

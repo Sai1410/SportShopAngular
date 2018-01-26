@@ -1,0 +1,112 @@
+<nav class="navbar adminPanel">
+	<div class="container-fluid">
+		<div class="navbar-header">Admin Panel - OrderView</div>
+		<ul class="nav navbar-nav navbar-right bag">
+			<li>
+				<button routerLink="/Products">Logout</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="text-center">
+	<button class="btn views" (click)='View = 0'>Unrealized Orders
+	</button>
+	<button class="btn views" (click)='View = 1'>Realized Orders</button>
+</div>
+
+<div *ngIf='View === 0'>
+
+	<table class="table table-hover">
+		<tr>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Order sum</th>
+			<th></th>
+		</tr>
+		<tr *ngFor='let u of usersOrders  | realizedfilter: false'>
+			<td>{{u.name}}</td>
+			<td>{{u.surname}}</td>
+			<td>{{getOrderSum(u) | currency}}</td>
+			<td><button class="btn" (click)="showDetails(u)">Order
+					Details</button></td>
+		</tr>
+	</table>
+
+	<div *ngIf='showOrderDetails === true'>
+		<h2>Order Details</h2>
+		<table class="table table-hover">
+			<tr>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Order sum</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>{{orderDetail.name}}</td>
+				<td>{{orderDetail.surname}}</td>
+				<td>{{getOrderSum(orderDetail) | currency}}</td>
+			</tr>
+			<tr>
+				<th>Product name</th>
+				<th>Amount</th>
+				<th>Price</th>
+			</tr>
+			<tr *ngFor='let o of listDetail'>
+				<td>{{o.name}}</td>
+				<td>{{o.amount}}</td>
+				<td>{{o.sum | currency}}</td>
+			</tr>
+		</table>
+		<button class='btn' (click)='moveToRealized(orderDetail.name)'>
+			Move To Realized</button>
+	</div>
+</div>
+
+<div *ngIf='View === 1'>
+
+	<table class="table table-hover">
+		<tr>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Order sum</th>
+			<th></th>
+		</tr>
+		<tr *ngFor='let u of usersOrders | realizedfilter: true'>
+			<td>{{u.name}}</td>
+			<td>{{u.surname}}</td>
+			<td>{{getOrderSum(u) | currency}}</td>
+			<td><button class="btn" (click)="showDetails(u)">Order
+					Details</button></td>
+		</tr>
+	</table>
+
+	<div *ngIf='showOrderDetails === true'>
+		<h2>Order Details</h2>
+		<table class="table table-hover">
+			<tr>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Order sum</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>{{orderDetail.name}}</td>
+				<td>{{orderDetail.surname}}</td>
+				<td>{{getOrderSum(orderDetail) | currency}}</td>
+			</tr>
+			<tr>
+				<th>Product name</th>
+				<th>Amount</th>
+				<th>Price</th>
+			</tr>
+			<tr *ngFor='let o of listDetail'>
+				<td>{{o.name}}</td>
+				<td>{{o.amount}}</td>
+				<td>{{o.sum | currency}}</td>
+			</tr>
+		</table>
+		<button class='btn' (click)='moveToUnrealized(orderDetail.name)'>
+			Move To Unrealized</button>
+	</div>
+
+</div>

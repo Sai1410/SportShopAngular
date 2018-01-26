@@ -1,0 +1,79 @@
+.bag {
+	font-size:20px; 
+	color:#3465a4;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.bag li{
+	margin:5px;
+}
+
+.ContinueShopping{
+	background: linear-gradient(white,#3465a4);
+	font-family: 'Audiowide';
+	border:1px solid black;
+	font-size:15px;
+}
+.ContinueShopping:hover{
+	background: linear-gradient(gray,white);
+	left: .1em;
+}
+
+.EndShopping{
+	background: linear-gradient(white,red);
+	font-family: 'Audiowide';
+	border:1px solid black;
+	font-size:15px;
+}
+
+.EndShopping:hover{
+	background: linear-gradient(gray,white);
+	left: .1em;
+}
+
+
+.remove {
+	
+	background: linear-gradient(black,gray);
+	border:1px solid gray;
+	cursor:pointer;
+	margin-right:20px;
+	margin-left:20px;
+	font-family: 'Audiowide';
+	font-size:15px;
+	color:white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	
+}
+
+.remove:hover{
+	background: linear-gradient(white,black);
+}
+
+.table{
+	font-family: 'Audiowide';
+	color: black;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+
+}
+
+.table button{
+	float:right;
+	margin:0;
+	padding:5px;
+}
+
+.Summary{
+	color: #3465a4;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.NoItems{
+	font-family: 'Audiowide';
+	font-size: 40px;
+	text-align: center;
+	color: black;
+	padding: 10px;
+	margin: 10px;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}

@@ -1,0 +1,73 @@
+.bag {
+	font-size: 20px;
+	color: #d3d7cf;
+	color: #3465a4;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.bag li {
+	margin: 5px;
+}
+
+.adminPanel {
+	background: linear-gradient(black, gray);
+}
+
+.buttons button {
+	background: linear-gradient(black, red);
+	border: 1px solid gray;
+	cursor: pointer;
+	padding: 15px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-right: 20px;
+	margin-left: 20px;
+	font-family: 'Audiowide';
+	font-size: 15px;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.buttons button:hover {
+	background: linear-gradient(red, white);
+	left: .1em;
+}
+
+.LoginData {
+	margin: 10px;
+	text-align: center;
+}
+
+.LoginData label {
+	color: black;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-family: 'Audiowide';
+	font-size: 30px;
+}
+
+.LoginData input {
+	width: 50%;
+	border: 1px solid black;
+	margin: auto;
+}
+
+.LoginData button {
+	display: block;
+	margin: auto;
+	background: linear-gradient(#3465a4, white);
+	border: 1px solid black;
+	cursor: pointer;
+	padding: 15px;
+	width: 25%;
+	margin-bottom: 10px;
+	font-family: 'Audiowide';
+	font-size: 15px;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.LoginData button:hover {
+	background: linear-gradient(white, #3465a4);
+	color: white;
+	left: .1em;
+}

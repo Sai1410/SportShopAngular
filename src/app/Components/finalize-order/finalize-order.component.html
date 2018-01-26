@@ -1,0 +1,47 @@
+<nav class="navbar">
+	<div class="container-fluid">
+		<div class="navbar-header">Finalize Order</div>
+		<ul class="nav navbar-nav navbar-right bag">
+			<li>
+				<button routerLink="/Bag">Bag</button>
+			</li>
+			<li>
+				<button routerLink="/UserPanel">User Panel</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+<div class="data">
+	<h2>Recipient</h2>
+	Name <br />
+	<div *ngIf='warningName == null' class='Input'>
+		<input [(ngModel)]="Personaldata.name">
+	</div>
+
+	<div *ngIf='warningName' class='InputWrong'>
+		<input [(ngModel)]="Personaldata.name"> <br />{{warningName}}
+	</div>
+
+	Surname <br />
+	<div *ngIf='warningName == null' class='Input'>
+		<input [(ngModel)]="Personaldata.surname">
+	</div>
+
+	<div *ngIf='warningName' class='InputWrong'>
+		<input [(ngModel)]="Personaldata.surname"> <br />{{warningSurname}}
+	</div>
+
+	<h2>Address</h2>
+	Street name: <br />
+	<div *ngIf='warningAddress == null' class='Input'>
+		<input [(ngModel)]="Personaldata.address">
+	</div>
+	<div *ngIf='warningAddress' class='InputWrong'>
+		<input [(ngModel)]="Personaldata.address"> <br />{{warningAddress}}
+	</div>
+
+</div>
+
+<div class="End">
+	<button class="btn" (click)="validateOrEnd()">End</button>
+</div>

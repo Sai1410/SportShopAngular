@@ -1,0 +1,47 @@
+<nav class="navbar">
+	<div class="container-fluid">
+		<div class="navbar-header">Your Order</div>
+		<ul class="nav navbar-nav navbar-right bag">
+			<li>
+				<button routerLink="/UserPanel">User Panel</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+<table class="table table-hover" *ngIf='list.length > 0'>
+	<tr>
+		<td></td>
+		<td>Amount</td>
+		<td>Product</td>
+		<td>Price</td>
+		<td>Full price</td>
+		<td></td>
+	</tr>
+	<tr *ngFor='let o of list'>
+		<td></td>
+		<td>{{o.amount}}</td>
+		<td>{{o.name}}</td>
+		<td>{{o.price | currency}}</td>
+		<td>{{o.sum | currency}}</td>
+		<td><button class="btn remove" (click)="removeItem(o)">
+				Remove Item</button></td>
+	</tr>
+	<tr class="Summary">
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>SUM</td>
+		<td>{{sumPrice | currency}}</td>
+		<td></td>
+	</tr>
+</table>
+<div *ngIf='list.length === 0' class="NoItems">No items in bag!</div>
+<div class="text-center">
+	<button class='btn ContinueShopping' routerLink="/Products">
+		Continue Shopping</button>
+	<button class='btn EndShopping' routerLink="/AddressForm">End
+		Shopping</button>
+</div>
+

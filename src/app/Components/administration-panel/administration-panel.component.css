@@ -1,0 +1,40 @@
+.bag {
+	font-size:20px;
+	color: #d3d7cf; 
+	color:#3465a4;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.bag li{
+	margin:5px;
+}
+.adminPanel {
+
+	background: linear-gradient(black,gray);
+}
+
+.Options{
+	margin: 10px;
+	text-align: center;
+}
+
+.Options button{
+	display:block;
+	margin: auto;
+	background: linear-gradient(#3465a4,white);
+	border:1px solid black;
+	cursor:pointer;
+	padding: 15px;
+	width: 25%;
+	margin-bottom: 10px;
+	font-family: 'Audiowide';
+	font-size:15px;
+	color:white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.Options button:hover{
+	background: linear-gradient(white,#3465a4);
+	color:white;
+	left: .1em;
+}

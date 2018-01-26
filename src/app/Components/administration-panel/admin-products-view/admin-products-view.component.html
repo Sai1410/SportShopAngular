@@ -1,0 +1,83 @@
+<nav class="navbar adminPanel">
+	<div class="container-fluid">
+		<div class="navbar-header">Admin Panel - Products View</div>
+		<ul class="nav navbar-nav navbar-right bag">
+			<li>
+				<button routerLink="/Products">Logout</button>
+				<button routerLink="/AdministrationPanel">Go Back To Menu</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<table class="table table-hover" *ngIf='products'>
+	<tr>
+		<th>Name</th>
+		<th>Category</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Image</th>
+	</tr>
+	<tr></tr>
+	<tr *ngFor="let product of products">
+		<td>{{product.name}}</td>
+		<td>{{product.category}}</td>
+		<td>{{product.description}}</td>
+		<td>{{product.price}}</td>
+		<td><div *ngIf='product.image_path'>
+				<img src={{product.image_path}} class='img'>
+			</div></td>
+		<td><button class="Options btn" (click)="removeProduct(product)">
+				Remove</button></td>
+		<td><button class="Options btn"
+				(click)="editProductFlag=1; productTemp = product;">Edit</button></td>
+	</tr>
+</table>
+
+<div class="container text-center"
+	*ngIf='addNewProductsPanel == 0 && editProductFlag == 0'>
+	<button class="btn Options" (click)="addNewProductsPanel = 1">
+		Add new product</button>
+</div>
+
+<div class="container text-center" *ngIf='addNewProductsPanel == 1'>
+	<table class="table table-hover">
+		<tr>
+			<td>Name</td>
+			<td>Category</td>
+			<td>Description</td>
+			<td>Price</td>
+			<td>Image Path</td>
+		</tr>
+		<tr>
+			<td><input type="text" [(ngModel)]="productTemp.name"></td>
+			<td><input type="text" [(ngModel)]="productTemp.category"></td>
+			<td><input type="text" [(ngModel)]="productTemp.description"></td>
+			<td><input type="text" [(ngModel)]="productTemp.price"></td>
+			<td><input type="text" [(ngModel)]="productTemp.image_path"></td>
+		</tr>
+	</table>
+	<button class="btn Options" (click)="addProduct(productTemp)">
+		Add product</button>
+</div>
+
+<div class="container text-center" *ngIf='editProductFlag == 1'>
+	<table class="table table-hover">
+		<tr>
+			<td>Name</td>
+			<td>Category</td>
+			<td>Description</td>
+			<td>Price</td>
+			<td>Image Path</td>
+		</tr>
+		<tr>
+			<td><input type="text" [(ngModel)]="productTemp.name"></td>
+			<td><input type="text" [(ngModel)]="productTemp.category"></td>
+			<td><input type="text" [(ngModel)]="productTemp.description"></td>
+			<td><input type="text" [(ngModel)]="productTemp.price"></td>
+			<td><input type="text" [(ngModel)]="productTemp.image_path"></td>
+		</tr>
+	</table>
+	<button class="btn Options" (click)="editProduct(productTemp)">
+		Edit product</button>
+</div>

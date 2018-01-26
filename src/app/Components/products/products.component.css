@@ -1,0 +1,155 @@
+.bag {
+	font-size:20px;
+	color: #d3d7cf; 
+	color:#3465a4;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.bag li{
+	margin:5px;
+}
+img {
+	width: 25%;
+	height: 25%;
+}
+.Categories {
+  	list-style-type: none;
+  	width: 25%;
+	float: left;
+	margin: 0;
+	padding: 0;
+	background:lightgray;
+}
+.Categories li{
+	background:linear-gradient(#d3d7cf,#555753);
+	border:1px solid black;
+	cursor:pointer;
+	color:black;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-family: 'Audiowide';
+	font-size:15px;
+	font-style:italic;
+	padding: 10px;
+	margin:2px;
+	text-align: center;
+	height: 60px;
+}
+
+.Categories li.selected {
+  	background: linear-gradient(white,#3465a4) !important;
+}
+
+.Categories li:hover {
+	background: linear-gradient(gray,white);
+	left: .1em;
+}
+
+.Products {
+  	list-style-type: none;
+  	width: 75%;
+	float: right;
+	padding: 0;
+	margin-top: 2px;
+
+}
+.Products h2{
+	font-size:20px;
+}
+.Products li{
+	background:linear-gradient(white,gray) !important;
+	border:1px solid black;
+	color:black;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-family: 'Audiowide';
+	font-size:15px;
+	padding: 10px;
+	height: 140px;
+	margin-bottom: 10px;
+	
+}
+
+.pages {
+	position: fixed;
+	left: 25%;
+	top: 500px
+}
+
+.pages button{
+	border:1px solid black;
+	float:left;
+	margin-top: 20px;
+	margin-left: 5px;
+	background:linear-gradient(black,gray);
+	cursor:pointer;
+	padding: 7px;
+	width: 30px;
+	font-family: 'Audiowide';
+	font-size:15px;
+	font-style:italic;
+	color:lightgray;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	
+}
+
+.pages button:hover{
+	background: linear-gradient(white,gray);
+	left: .1em;
+}
+
+.pages button.selected{
+  	background: linear-gradient(white,#3465a4) !important;
+}
+
+.price {
+	border:1px solid black;
+}
+
+.pricefiltercontainer{
+	display: block;
+	background:lightgray;
+	width: 50%;
+	text-align: center;
+	float: left;
+	border:1px solid gray;
+	color:black;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-family: 'Audiowide';
+	padding: 10px;
+}
+.pricefiltercontainer input{
+	width: 25%;	
+}
+
+.searchproductcontainer{
+	float: left;
+	display: block;
+	background:lightgray;
+	width: 50%;
+	text-align: center;
+	border:1px solid gray;
+	color:black;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-family: 'Audiowide';
+	padding: 10px;
+}
+
+.searchproductcontainer input{
+	width: 75%;	
+}
+
+.AdminPanelButton {
+	width: 25%;
+	text-align: left;
+	margin-top: 50px;
+}
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border:1px solid black;
+}

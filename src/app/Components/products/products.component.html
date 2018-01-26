@@ -1,0 +1,81 @@
+<nav class="navbar">
+	<div class="container-fluid">
+		<div class="navbar-header">Sport Shop</div>
+		<ul class="nav navbar-nav navbar-right bag">
+			<li>Bag: {{sumProducts}} product(s) {{sumPrice | currency}}</li>
+			<li>
+				<button routerLink="/Bag">Bag</button>
+			</li>
+			<li>
+				<button routerLink="/UserPanel">User Panel</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<ul class="Categories list-group">
+	<li *ngFor='let cat of categories'
+		[class.selected]="cat === selectedCategory" (click)="onSelect(cat)">
+		{{cat}}</li>
+</ul>
+
+<ul class="list-group Products" *ngIf='products'>
+	<li
+		*ngFor="let product of products | categoryfilter: selectedCategory| pricefilter: minPrice: maxPrice | namefilter: inputName | slice:3*pageNumber - 3:3*pageNumber">
+		<h2>
+			{{product.name}}
+			<button class="price btn pull-right" (click)="addItem(product)">
+				{{product.price | currency}}</button>
+			<button class="price btn pull-right" data-toggle="modal"
+				data-target="#myModal" (click)="assignProductDetails(product)">
+				Show Details</button>
+		</h2> {{product.description}}
+	</li>
+</ul>
+
+<div class="container">
+	<div class="pagination pages">
+		<button *ngFor='let page of pages'
+			[class.selected]="page === pageNumber" (click)="nextPage(page)"
+			class='btn'>{{page}}</button>
+	</div>
+
+</div>
+<div *ngIf='productDetails'>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Product Details</h4>
+				</div>
+				<div class="modal-body">
+					<p>{{productDetails.description}}</p>
+					<div *ngIf='productDetails.image_path'>
+						<img src={{productDetails.image_path}} class='img'>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="searchproductcontainer">
+		<p>Search product</p>
+		<input type='text' [(ngModel)]="inputName" (keyup)="getPages()"
+			placeholder='Enter product name'>
+	</div>
+	<div class="pricefiltercontainer">
+		<p>Filter by price</p>
+		<input [(ngModel)]="minPrice" (keyup)="getPages()" placeholder='MIN'>
+		: <input [(ngModel)]="maxPrice" (keyup)="getPages()" placeholder='MAX'>$
+	</div>
+</div>
